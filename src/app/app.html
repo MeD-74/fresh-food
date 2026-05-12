@@ -108,7 +108,19 @@
               <p>Don't miss this opportunity at a special discount just for this week.</p>
             </div>
             <div class="deal-timer" aria-label="Offer expiry countdown">
-              <span class="clock-dot"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="timer-icon"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
               <span>Expires in :</span>
               <strong *ngFor="let time of countdown()">{{ time }}</strong>
             </div>
@@ -117,15 +129,12 @@
           <div class="product-grid">
             <article *ngFor="let product of products" class="product-card">
               <span *ngIf="product.tag" class="product-tag">{{ product.tag }}</span>
-              <div class="product-image">
-                <img [src]="'assets/images/' + product.image" [alt]="product.name" />
-                <ul class="product-option" aria-label="Product actions">
-                  <li><button data-tip="View" title="View">&#128065;</button></li>
-                  <li><button data-tip="Compare" title="Compare">&#8635;</button></li>
-                  <li><button data-tip="Wishlist" title="Wishlist">&#9825;</button></li>
-                </ul>
-              </div>
-              <h3>{{ product.name }}</h3>
+              <a href="?page=product" style="text-decoration: none; color: inherit; display: block">
+                <div class="product-image">
+                  <img [src]="'assets/images/' + product.image" [alt]="product.name" />
+                </div>
+                <h3>{{ product.name }}</h3>
+              </a>
               <div class="product-price">
                 <strong>${{ product.price }}</strong>
                 <del>{{ product.oldPrice }}</del>
@@ -194,15 +203,12 @@
 
           <div class="product-grid one-row">
             <article *ngFor="let product of cupboardProducts" class="product-card">
-              <div class="product-image">
-                <img [src]="'assets/images/' + product.image" [alt]="product.name" />
-                <ul class="product-option" aria-label="Product actions">
-                  <li><button data-tip="View" title="View">&#128065;</button></li>
-                  <li><button data-tip="Compare" title="Compare">&#8635;</button></li>
-                  <li><button data-tip="Wishlist" title="Wishlist">&#9825;</button></li>
-                </ul>
-              </div>
-              <h3>{{ product.name }}</h3>
+              <a href="?page=product" style="text-decoration: none; color: inherit; display: block">
+                <div class="product-image">
+                  <img [src]="'assets/images/' + product.image" [alt]="product.name" />
+                </div>
+                <h3>{{ product.name }}</h3>
+              </a>
               <div class="product-price">
                 <strong>${{ product.price }}</strong>
                 <del>{{ product.oldPrice }}</del>

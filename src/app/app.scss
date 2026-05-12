@@ -10,7 +10,7 @@
 }
 
 .site-shell {
-  background: #fff url('../assets/images/bg-body.png') top center / 100% auto repeat-y;
+  background: #fff url('/fresh-food/assets/images/bg-body.png') top center / 100% auto repeat-y;
   color: #222;
   padding: calc(30px + 20 * (100vw - 320px) / 1600) 0 16px;
 }
@@ -140,35 +140,16 @@
   position: absolute;
 }
 
-.clock-dot {
-  border: 2px solid #fff;
-  border-radius: 50%;
-  display: inline-block;
-  height: 17px;
-  position: relative;
-  width: 17px;
+.timer-icon {
+  width: 18px;
+  height: 18px;
+  animation: tick-tock 2s ease-in-out infinite;
 }
 
-.clock-dot::before,
-.clock-dot::after {
-  background: #fff;
-  content: '';
-  left: 7px;
-  position: absolute;
-  top: 3px;
-}
-
-.clock-dot::before {
-  height: 5px;
-  width: 2px;
-}
-
-.clock-dot::after {
-  height: 2px;
-  top: 8px;
-  transform: rotate(28deg);
-  transform-origin: left center;
-  width: 5px;
+@keyframes tick-tock {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
 .product-grid {
@@ -736,7 +717,7 @@
 .category-tile::before {
   background:
     linear-gradient(rgb(13 164 135 / 72%), rgb(13 164 135 / 72%)),
-    url('../assets/images/hero-banner/5.jpg') center / cover;
+    url('/fresh-food/assets/images/hero-banner/5.jpg') center / cover;
   content: '';
   filter: blur(3px);
   inset: -6px;
@@ -856,7 +837,7 @@
 
 .cashback-banner {
   align-items: center;
-  background-image: url('../assets/images/New folder/15.jpg');
+  background-image: url('/fresh-food/assets/images/New folder/15.jpg');
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -1254,21 +1235,9 @@
     padding: 5px 8px;
   }
 
-  .clock-dot {
-    height: 14px;
+ .timer-icon {
     width: 14px;
-  }
-
-  .clock-dot::before {
-    height: 4px;
-    left: 5px;
-    top: 2px;
-  }
-
-  .clock-dot::after {
-    left: 5px;
-    top: 6px;
-    width: 4px;
+    height: 14px;
   }
 
   .product-grid {

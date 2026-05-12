@@ -451,7 +451,7 @@ a {
 }
 
 .product-promo {
-  background: url('../../../assets/images/mega-menu.png') center / cover no-repeat;
+  background: url('/fresh-food/assets/images/mega-menu.png') center / cover no-repeat;
   border-radius: 0 5px 5px 0;
   margin: -24px 0 -24px -6px;
 }
@@ -459,7 +459,7 @@ a {
 .grocery-mega {
   background:
     linear-gradient(90deg, #fff 0 70%, rgb(255 255 255 / 25%) 70%),
-    url('../../../assets/images/New folder/11.jpg') right center / contain no-repeat #fff;
+    url('/fresh-food/assets/images/New folder/11.jpg') right center / contain no-repeat #fff;
   display: grid;
   gap: 46px;
   grid-template-columns: repeat(3, 210px);
