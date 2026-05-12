@@ -1,0 +1,167 @@
+  <div class="border-b border-gray-100 shadow-sm hidden lg:block">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <button
+          class="bg-fresh-green text-white px-6 py-3.5 font-semibold text-sm flex items-center gap-3 hover:bg-[#0b8e75] transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          All Categories
+        </button>
+
+        <nav class="flex items-center gap-6 text-[15px] font-medium text-gray-800">
+          <a href="#" class="active flex items-center gap-1 hover:text-fresh-green transition"
+            >Home
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition"
+            >Shop
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition"
+            >Product
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition"
+            >Mega Menu
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition"
+            >Blog
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition relative">
+            Pages
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <span
+              class="absolute -top-3 -right-3 bg-[#ff4f4f] text-white text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center justify-center shadow-sm"
+              >New</span
+            >
+          </a>
+          <a href="#" class="flex items-center gap-1 hover:text-fresh-green transition"
+            >Seller
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              /></svg
+          ></a>
+        </nav>
+      </div>
+
+      <button
+        class="bg-[#e2f5ec] text-fresh-green px-5 py-2.5 rounded text-sm font-bold flex items-center gap-2 hover:bg-fresh-green hover:text-white transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+        Deal Today
+      </button>
+    </div>
+  </div>
+
+

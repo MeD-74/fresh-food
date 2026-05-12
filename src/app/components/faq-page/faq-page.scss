@@ -1,0 +1,290 @@
+.faq-page-container {
+  font-family: 'Public Sans', sans-serif;
+  color: #222;
+  background-color: #fff;
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .help-center-hero {
+    padding: 80px 0 60px;
+    background-color: #fcfcfc;
+
+    .text-center {
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: #7b8494;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .search-bar-wrapper {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      padding: 5px 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid #eee;
+
+      .search-icon {
+        color: #0da487;
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        padding: 15px 0;
+        font-size: 15px;
+        color: #222;
+        &::placeholder {
+          color: #a0aec0;
+        }
+      }
+
+      .category-dropdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #0da487;
+        font-weight: 600;
+        font-size: 14px;
+        padding-left: 20px;
+        border-left: 1px solid #eee;
+        cursor: pointer;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .help-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .help-card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      }
+
+      .icon-box {
+        color: #0da487;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 13px;
+        color: #7b8494;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+
+  .faq-content-section {
+    padding: 80px 0;
+
+    .faq-split-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .faq-text-side {
+      h2 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 15px;
+        color: #6b7280;
+        line-height: 1.6;
+
+        a {
+          color: #0da487;
+          text-decoration: underline;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .faq-accordion-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .custom-accordion {
+      background-color: #f8f8f8;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #222;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.3s ease;
+
+        .chevron {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          color: #222;
+          transition:
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            color 0.3s ease;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .accordion-content-wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .accordion-content {
+        overflow: hidden;
+        padding: 0 24px;
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.7;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        p {
+          margin-bottom: 12px;
+        }
+        p:last-child {
+          margin-bottom: 0;
+        }
+        strong {
+          color: #222;
+        }
+      }
+
+      &.open {
+        background-color: #f4fcf9;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+
+        .accordion-header {
+          color: #0da487;
+
+          .chevron {
+            color: #0da487;
+            transform: rotate(180deg);
+          }
+        }
+
+        .accordion-content-wrapper {
+          grid-template-rows: 1fr;
+        }
+
+        .accordion-content {
+          padding: 0 24px 24px;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .help-center-hero .help-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-content-section .faq-split-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .faq-text-side h2 {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .help-center-hero .help-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .search-bar-wrapper {
+      flex-direction: column;
+      gap: 15px;
+      .category-dropdown {
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

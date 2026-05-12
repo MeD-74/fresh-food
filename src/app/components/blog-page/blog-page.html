@@ -1,0 +1,192 @@
+<main class="blog-page">
+  <section class="blog-title-band">
+    <div class="blog-container">
+      <h1>{{ pageTitle }}</h1>
+      <div class="breadcrumb">
+        <ng-container *ngIf="isDetailPage(); else gridCrumb">
+        </ng-container>
+        <ng-template #gridCrumb>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-container blog-layout">
+    <aside class="blog-sidebar">
+      <label class="blog-search">
+        <input type="text" placeholder="Search..." />
+        <button type="button" aria-label="Search">&#8981;</button>
+      </label>
+
+      <section class="sidebar-box recent-box">
+        <h2>Recent Post <span>⌃</span></h2>
+        <article *ngFor="let post of recentPosts">
+          <a href="/?page=blog-detail">
+            <img [src]="'/assets/images/' + post.image" [alt]="post.title" />
+          </a>
+          <div>
+            <h3>
+              <a href="/?page=blog-detail" style="color: inherit; text-decoration: none">{{
+                post.title
+              }}</a>
+            </h3>
+            <p>25 Jan, 2022</p>
+          </div>
+          <button type="button" aria-label="Like">&#9825;</button>
+        </article>
+      </section>
+
+      <section class="sidebar-box category-box">
+        <h2>Category <span>⌄</span></h2>
+        <ul>
+          <li *ngFor="let category of categories">
+            <span>{{ category[0] }}</span>
+            <b>{{ category[1] }}</b>
+          </li>
+        </ul>
+      </section>
+
+      <section class="sidebar-box tags-box">
+        <h2>Product Tags <span>⌄</span></h2>
+        <div>
+          <a *ngFor="let tag of tags" href="#">{{ tag }}</a>
+        </div>
+      </section>
+
+      <section class="sidebar-box trending-box">
+        <h2>Trending Products <span>⌄</span></h2>
+        <article *ngFor="let product of trendingProducts">
+          <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+          <div>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.qty }}</p>
+            <strong>$ {{ product.price }}</strong>
+          </div>
+        </article>
+      </section>
+    </aside>
+
+    <div class="blog-content" *ngIf="!isDetailPage(); else detailTemplate">
+      <div class="post-grid">
+        <article *ngFor="let post of posts" class="post-card">
+          <div class="post-image">
+            <a href="/?page=blog-detail">
+              <img [src]="'/assets/images/' + post.image" [alt]="post.title" />
+            </a>
+            <span *ngIf="post.popular">&#9889; POPULAR</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">
+              <span>&#9716; 25 FEG, 2022</span>
+              <span>&#9817; {{ post.author }}</span>
+            </p>
+            <h2>
+              <a href="/?page=blog-detail" style="color: inherit; text-decoration: none">{{
+                post.title
+              }}</a>
+            </h2>
+            <a class="read-more" href="/?page=blog-detail"
+              >Read More <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
+      </div>
+
+      <nav class="blog-pagination" aria-label="Blog pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">&raquo;</a>
+      </nav>
+    </div>
+
+    <ng-template #detailTemplate>
+      <article class="detail-content">
+        <section class="detail-hero">
+          <img src="/assets/images/featured-blog/1.jpg" alt="Agriculture conference harvest" />
+          <div>
+            <p>Backpack <span></span> Life Style <span></span> Organic</p>
+            <h2>Agriculture Conference Harvest 2022 In Paris</h2>
+            <small
+              >&#9817; Caroline &nbsp;&nbsp; &#9635; April 19, 2022 &nbsp;&nbsp; &#9723; 82
+              Comment</small
+            >
+          </div>
+        </section>
+
+        <div class="article-copy">
+          <p class="dropcap">
+            hotgun approach message the initiative so can I just chime in on that one. Make sure to
+            include in your wheelhouse bells and whistles, and touch base slow-walk our commitment
+            nor what's the status on the deliverables for eow? Create spaces to explore what next
+            commitment to the cause.
+          </p>
+          <p>
+            Let's unpack that later everyone thinks the soup tastes better after they pissed in it
+            pivot, re-inventing the wheel, and it's not hard guys. Market-facing pushback back of
+            the net, for pro-sumer software let's see if we can dovetail these two projects but turn
+            the crank.
+          </p>
+          <p>
+            Waste of resources can you run this by clearance? hot johnny coming through driving the
+            initiative forward our competitors are jumping the shark. Unlock meaningful moments of
+            relaxation.
+          </p>
+
+          <blockquote>
+            <b>&ldquo;</b>
+            <span
+              >Adipisicing elit Qui ipsam natus aspernatur quaerat impedit eveniet ipsum dolor</span
+            >
+            <small>- DENNY DOSE</small>
+          </blockquote>
+
+          <p>
+            Agile currying favour pulling teeth collaboration through advanced technology. Everyone
+            thinks the soup tastes better after they pissed in it can you put it on my calendar?
+            Low-hanging fruit. Data-point blue sky yet first-order optimal strategies shotgun
+            approach.
+          </p>
+          <p>
+            We need to harvest synergy effects land it in region nor time to open the kimono, but we
+            need to touch base off-line before we fire the new ux experience. Moving the goalposts.
+            Lean into that problem we need to get all stakeholders up to speed and in the right
+            place.
+          </p>
+        </div>
+
+        <section class="comments-section">
+          <h2>Comments</h2>
+          <article *ngFor="let comment of comments" class="comment-item">
+            <img [src]="'/assets/images/' + comment.avatar" [alt]="comment.name" />
+            <div>
+              <span>30 Jan, 2022</span>
+              <h3>{{ comment.name }}</h3>
+              <p>"{{ comment.text }}"</p>
+            </div>
+            <button type="button">&#8617; Reply</button>
+          </article>
+        </section>
+
+        <section class="comment-form">
+          <h2>Leave Comment</h2>
+          <p>Your email address will not be published. Required fields are marked</p>
+          <div class="form-grid">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Enter Email Address" />
+            <input type="url" placeholder="Enter URL" />
+          </div>
+          <textarea placeholder="Comments"></textarea>
+          <label
+            ><input type="checkbox" /> Save my name, email, and website in this browser for the next
+            time I comment.</label
+          >
+          <button type="button">Post Comment</button>
+        </section>
+      </article>
+    </ng-template>
+  </section>
+
+  <app-footer></app-footer>
+</main>

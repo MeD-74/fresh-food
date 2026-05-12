@@ -1,0 +1,231 @@
+.shop-btn span,
+.shop-link span,
+.mini-shop-circle span {
+  transition: transform 0.25s ease;
+}
+
+.shop-btn:hover span,
+.shop-link:hover span,
+.mini-shop-circle:hover span {
+  transform: translateX(5px);
+}
+
+.hero-mini-card::after {
+  background: #fff;
+  content: '';
+  height: 100%;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.hero-mini-card:hover::after {
+  animation: fastkartFlash 1.5s ease-in-out;
+}
+
+.hero-mini-card {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 168px !important;
+}
+
+.hero-side-card {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.side-card-1 {
+  background-image: url('/assets/images/hero-banner/2.jpg');
+}
+
+.side-card-2 {
+  background-image: url('/assets/images/hero-banner/3.jpg');
+}
+
+.mini-card-1 {
+  background-image: url('/assets/images/hero-banner/4.jpg');
+}
+
+.mini-card-2 {
+  background-image: url('/assets/images/hero-banner/5.jpg');
+}
+
+.mini-card-3 {
+  background-image: url('/assets/images/hero-banner/6.jpg');
+}
+
+.mini-card-4 {
+  background-image: url('/assets/images/hero-banner/7.jpg');
+}
+
+.mini-text-pill {
+  background: rgb(255 255 255 / 88%);
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 8px 24px rgb(34 34 34 / 4%);
+  left: 0;
+  max-width: 62%;
+  min-height: auto;
+  padding: calc(7.2px + 0.25vw) calc(28.2px + 0.5625vw) calc(7.2px + 0.25vw)
+    calc(7.2px + 0.25vw);
+  position: absolute;
+  top: 22px;
+  width: auto;
+  z-index: 30;
+}
+
+.mini-text-pill h4 {
+  font-size: 17px;
+  line-height: 1.2;
+  max-width: 176px;
+}
+
+.mini-text-pill p {
+  font-size: 14px;
+  margin: 0;
+  max-width: 176px;
+}
+
+.mini-shop-circle {
+  align-items: flex-end;
+  background: #ff6a6a;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  bottom: 0;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 8px;
+  height: 64px;
+  justify-content: center;
+  left: 0;
+  padding-bottom: 15px;
+  position: absolute;
+  width: 145px;
+  z-index: 28;
+}
+
+@media (max-width: 1280px) {
+  .mini-text-pill {
+    max-width: 66%;
+  }
+}
+
+@media (max-width: 520px) {
+  :host {
+    display: block;
+  }
+
+  section {
+    padding-bottom: 14px;
+    padding-top: 12px;
+  }
+
+  .main-hero-card {
+    min-height: 230px !important;
+    padding: 22px 16px !important;
+  }
+
+  .main-hero-copy {
+    width: 58% !important;
+  }
+
+  .main-hero-copy h1 {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .main-hero-copy p {
+    font-size: 10px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+  }
+
+  .main-hero-copy .shop-btn {
+    font-size: 10px !important;
+    padding: 8px 14px !important;
+  }
+
+  .main-hero-copy .flex {
+    gap: 6px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .main-hero-copy .flex span {
+    font-size: 9px !important;
+  }
+
+  .main-hero-image {
+    display: block !important;
+    width: 58% !important;
+  }
+
+  .main-hero-image img {
+    object-fit: cover;
+    object-position: right bottom;
+  }
+
+  .hero-mini-card {
+    min-height: 158px !important;
+  }
+
+  .mini-text-pill {
+    max-width: 66%;
+    top: 18px;
+  }
+
+  .mini-shop-circle {
+    height: 58px;
+    width: 132px;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 767px) {
+  .main-hero-card {
+    min-height: 290px !important;
+  }
+
+  .main-hero-copy {
+    width: 58% !important;
+  }
+
+  .main-hero-copy h1 {
+    font-size: 24px !important;
+  }
+
+  .main-hero-image {
+    display: block !important;
+    width: 55% !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1023px) {
+  .mini-banner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.mini-shop-circle span {
+  position: relative;
+}
+
+.mini-shop-circle:hover {
+  color: #fff;
+}
+
+@keyframes fastkartFlash {
+  0% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

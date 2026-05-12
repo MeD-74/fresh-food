@@ -1,0 +1,145 @@
+<footer class="bg-[#f8f8f8] pt-8">
+  <div class="container mx-auto px-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-8 border-b border-dashed border-gray-300"
+    >
+      <div class="footer-service">
+        <img src="/assets/images/icons/product.svg" alt="" />
+        <h4>Every Fresh Products</h4>
+      </div>
+      <div class="footer-service">
+        <img src="/assets/images/icons/delivery.svg" alt="" />
+        <h4>Free Delivery For Order Over $50</h4>
+      </div>
+      <div class="footer-service">
+        <img src="/assets/images/icons/discount.svg" alt="" />
+        <h4>Daily Mega Discounts</h4>
+      </div>
+      <div class="footer-service">
+        <img src="/assets/images/icons/market.svg" alt="" />
+        <h4>Best Price On The Market</h4>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 py-10 border-b border-gray-200"
+    >
+      <div>
+        <h2 class="text-2xl font-bold text-fresh-green mb-4">Fastkart.</h2>
+        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+          We are a friendly grocery serving a variety of cocktails, wines and beers. Our bar is a
+          perfect place for a couple.
+        </p>
+        <ul class="footer-contact-list text-sm text-gray-500 space-y-3">
+          <li>1418 Riverwood Drive, CA 96052, US</li>
+          <li>support@fastkart.com</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3
+          class="footer-title"
+          [class.active]="activeSection === 'categories'"
+          (click)="toggleSection('categories')"
+        >
+          Categories
+        </h3>
+        <div class="accordion-content" [class.open]="activeSection === 'categories'">
+          <ul class="footer-links pt-3 md:pt-0">
+            <li><a href="#">Vegetables & Fruit</a></li>
+            <li><a href="#">Beverages</a></li>
+            <li><a href="#">Meats & Seafood</a></li>
+            <li><a href="#">Frozen Foods</a></li>
+            <li><a href="#">Biscuits & Snacks</a></li>
+            <li><a href="#">Grocery & Staples</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class="footer-title"
+          [class.active]="activeSection === 'links'"
+          (click)="toggleSection('links')"
+        >
+          Useful Links
+        </h3>
+        <div class="accordion-content" [class.open]="activeSection === 'links'">
+          <ul class="footer-links pt-3 md:pt-0">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class="footer-title"
+          [class.active]="activeSection === 'help'"
+          (click)="toggleSection('help')"
+        >
+          Help Center
+        </h3>
+        <div class="accordion-content" [class.open]="activeSection === 'help'">
+          <ul class="footer-links pt-3 md:pt-0">
+            <li><a href="#">Your Order</a></li>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Your Wishlist</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class="footer-title"
+          [class.active]="activeSection === 'contact'"
+          (click)="toggleSection('contact')"
+        >
+          Contact Us
+        </h3>
+        <div class="accordion-content" [class.open]="activeSection === 'contact'">
+          <div class="pt-3 md:pt-0">
+            <div class="mb-4">
+              <p class="text-sm text-gray-500 mb-1">Hotline 24/7:</p>
+              <p class="font-bold text-gray-800">+91 888 104 2340</p>
+            </div>
+            <div class="mb-6">
+              <p class="text-sm text-gray-500 mb-1">Email Address:</p>
+              <p class="font-bold text-gray-800">fastkart@hotmail.com</p>
+            </div>
+            <p class="text-sm text-gray-500 mb-3">Download App:</p>
+            <div class="flex gap-2 pb-2">
+              <img src="/assets/images/icons/playstore.svg" alt="Google Play" class="h-9" />
+              <img src="/assets/images/appstore.svg" alt="App Store" class="h-9" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center py-6 gap-4">
+      <p class="text-sm text-gray-500 text-center md:text-left">
+        ©2022 Fastkart All rights reserved
+      </p>
+      <div class="flex gap-3 items-center">
+        <img
+          src="/assets/images/New folder (4)/1.png"
+          alt="Payment methods"
+          class="h-8 object-contain"
+        />
+      </div>
+      <div class="flex gap-4 text-gray-500 text-sm">
+        <span>Stay connected:</span>
+        <a href="#" class="hover:text-fresh-green">f</a>
+        <a href="#" class="hover:text-fresh-green">t</a>
+        <a href="#" class="hover:text-fresh-green">p</a>
+      </div>
+    </div>
+  </div>
+</footer>

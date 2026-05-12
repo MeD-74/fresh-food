@@ -1,0 +1,310 @@
+<main class="shop-page">
+  <section class="shop-title-band">
+    <div class="shop-container">
+      <h1>{{ viewMode() === 'list' ? 'Shop List' : 'Shop Right Sidebar' }}</h1>
+      <div class="breadcrumb">
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-container shop-content">
+    <div class="shop-category-strip" *ngIf="viewMode() !== 'list'">
+      <button *ngFor="let category of categories" class="shop-category-card">
+        <img [src]="'/assets/images/' + category.icon" [alt]="category.name" />
+        <span>{{ category.name }}</span>
+      </button>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="shop-filters">
+        <div class="filter-header">
+          <h2>Filters</h2>
+          <button>Clear All</button>
+        </div>
+
+        <div class="filter-tags">
+          <span *ngFor="let tag of filterTags; let i = index">
+            {{ tag }}
+            <b (click)="removeTag(i, $event)" class="close-icon">&times;</b>
+          </span>
+        </div>
+
+        <section class="filter-block">
+          <h3>Categories <span>&#8964;</span></h3>
+          <label class="filter-search">
+            <input type="text" placeholder="Search" />
+            <span>&#8981;</span>
+          </label>
+          <ul>
+            <li *ngFor="let item of categoryFilters">
+              <label
+                ><input type="checkbox" /> <span>{{ item[0] }}</span></label
+              >
+              <small>({{ item[1] }})</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="filter-block">
+          <h3>Food Preference <span>^</span></h3>
+          <ul>
+            <li *ngFor="let item of preferenceFilters">
+              <label
+                ><input type="checkbox" /> <span>{{ item[0] }}</span></label
+              >
+              <small>({{ item[1] }})</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="filter-block price-block">
+          <h3>Price <span>^</span></h3>
+          <div class="range-labels">
+            <span>$ {{ minPrice() }}</span>
+            <span>$ {{ maxPrice() }}</span>
+          </div>
+          <div class="price-range" [ngStyle]="priceTrackStyle()">
+            <input
+              type="range"
+              min="0"
+              max="500000"
+              step="1000"
+              [value]="minPrice()"
+              (input)="setMinPrice($event)"
+              aria-label="Minimum price"
+            />
+            <input
+              type="range"
+              min="0"
+              max="500000"
+              step="1000"
+              [value]="maxPrice()"
+              (input)="setMaxPrice($event)"
+              aria-label="Maximum price"
+            />
+          </div>
+          <input
+            type="text"
+            [value]="minPrice() + ';' + maxPrice()"
+            readonly
+            aria-label="Price range"
+          />
+        </section>
+
+        <section class="filter-block">
+          <h3>Rating <span>^</span></h3>
+          <ul>
+            <li *ngFor="let item of ratingFilters; let i = index">
+              <label>
+                <input type="checkbox" />
+                <span class="stars">{{ '★★★★★'.slice(0, 5 - i) }}{{ '☆☆☆☆☆'.slice(0, i) }}</span>
+              </label>
+              <small>({{ item }})</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="filter-block">
+          <h3>Discount <span>^</span></h3>
+          <ul>
+            <li *ngFor="let item of discountFilters">
+              <label
+                ><input type="checkbox" /> <span>{{ item[0] }}</span></label
+              >
+              <small>({{ item[1] }})</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="filter-block">
+          <h3>Pack Size <span>^</span></h3>
+          <ul>
+            <li *ngFor="let item of packFilters">
+              <label
+                ><input type="checkbox" /> <span>{{ item[0] }}</span></label
+              >
+              <small>({{ item[1] }})</small>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="shop-products">
+        <div *ngIf="viewMode() === 'list'" class="shop-list-banner">
+          <img src="/assets/images/featured-blog/1.jpg" alt="Healthy fruits and vegetables" />
+          <div>
+            <h2>Healthy, Nutritious & Tasty Fruits & Veggies</h2>
+            <p>Save upto 50%</p>
+          </div>
+        </div>
+
+        <div class="shop-toolbar">
+          <button class="filter-menu">▼ Filter Menu</button>
+          <div class="sort-box">
+            <span>Sort By :</span>
+            <button>Most Popular <i>&#8964;</i></button>
+          </div>
+          <div class="view-buttons">
+            <button
+              type="button"
+              [class.active]="viewMode() === 'three'"
+              (click)="setViewMode('three')"
+              aria-label="Show three products per row"
+            >
+              <span class="grid-icon three"><i></i><i></i><i></i></span>
+            </button>
+            <button
+              type="button"
+              [class.active]="viewMode() === 'four'"
+              (click)="setViewMode('four')"
+              aria-label="Show four products per row"
+            >
+              <span class="grid-icon four"><i></i><i></i><i></i><i></i></span>
+            </button>
+            <button
+              type="button"
+              [class.active]="viewMode() === 'list'"
+              (click)="setViewMode('list')"
+              aria-label="Show list view"
+            >
+              <span class="list-icon"><i></i><i></i><i></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="shop-product-grid"
+          [class.three-view]="viewMode() === 'three'"
+          [class.four-view]="viewMode() === 'four'"
+          [class.list-view]="viewMode() === 'list'"
+        >
+          <article *ngFor="let product of productList" class="shop-product-card">
+            <div class="shop-product-image">
+              <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+              <ul class="shop-product-option" aria-label="Product actions">
+                <li>
+                  <button
+                    type="button"
+                    data-tip="View"
+                    aria-label="View"
+                    (click)="openProductModal(product)"
+                  >
+                    &#128065;
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-tip="Compare" aria-label="Compare">&#8635;</button>
+                </li>
+                <li>
+                  <button type="button" data-tip="Wishlist" aria-label="Wishlist">&#9825;</button>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-product-info">
+              <span class="shop-product-category">{{ product.category }}</span>
+              <h2>{{ product.name }}</h2>
+              <p class="shop-list-copy">
+                Cheesy short crust pastry with delicious cream cheese and herbs. Fresh texture,
+                smooth flavor and a simple grocery favorite for every home.
+              </p>
+              <div class="shop-rating">
+                <span>★★★★☆</span>
+                <small>({{ product.rating }})</small>
+              </div>
+              <p>{{ product.qty }}</p>
+              <div class="shop-price">
+                <strong>${{ product.price }}</strong>
+                <del>${{ product.oldPrice }}</del>
+              </div>
+              <button class="shop-add"><span>Add</span><b>+</b></button>
+            </div>
+          </article>
+        </div>
+
+        <nav class="shop-pagination" aria-label="Shop pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">&raquo;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div
+  *ngIf="selectedProduct() as product"
+  class="product-quick-view"
+  role="dialog"
+  aria-modal="true"
+>
+  <button
+    class="quick-view-backdrop"
+    type="button"
+    aria-label="Close"
+    (click)="closeProductModal()"
+  ></button>
+  <section class="quick-view-modal">
+    <button class="quick-view-close" type="button" aria-label="Close" (click)="closeProductModal()">
+      &times;
+    </button>
+
+    <div class="quick-view-image">
+      <img src="/assets/images/New folder (5)/1.jpg" [alt]="product.name" />
+    </div>
+
+    <div class="quick-view-content">
+      <h2>{{ product.name }}</h2>
+      <strong class="quick-view-price">$36.99</strong>
+      <div class="quick-view-rating">
+        <span>★★★★★</span>
+        <small>8 Reviews</small>
+        <b>6 sold in last 16 hours</b>
+      </div>
+
+      <div class="quick-view-details">
+        <h3>Product Details :</h3>
+        <p>
+          Candy canes sugar plum tart cotton candy chupa chups sugar plum chocolate I love. Caramels
+          marshmallow icing dessert candy canes I love souffle I love toffee. Marshmallow pie sweet
+          sweet roll sesame snaps tiramisu jelly bear claw.
+        </p>
+        <dl>
+          <div>
+            <dt>Brand Name:</dt>
+            <dd>Black Forest</dd>
+          </div>
+          <div>
+            <dt>Product Code:</dt>
+            <dd>W0690034</dd>
+          </div>
+          <div>
+            <dt>Product Type:</dt>
+            <dd>White Cream Cake</dd>
+          </div>
+        </dl>
+      </div>
+
+      <label class="cake-size-select">
+        <span>Cake Size :</span>
+        <select>
+          <option>Select Size</option>
+          <option>1/2 KG</option>
+          <option>1 KG</option>
+          <option>1/5 KG</option>
+          <option>Red Roses</option>
+          <option>With Pink Roses</option>
+        </select>
+      </label>
+
+      <div class="quick-view-actions">
+        <button type="button">Add To Cart</button>
+        <a href="#">View More Details</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>
