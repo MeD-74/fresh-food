@@ -161,7 +161,7 @@
             <h2>Order Summery</h2>
             <div class="summary-products">
               <article *ngFor="let product of checkoutProducts">
-                <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+                <img [src]="'assets/images/' + product.image" [alt]="product.name" />
                 <span>{{ product.name }} X {{ product.qty }}</span>
                 <strong>${{ formatPrice(product.price) }}</strong>
               </article>
@@ -198,7 +198,7 @@
         <section class="cart-list" aria-label="Shopping cart">
           <article *ngFor="let item of cartItems()" class="cart-row">
             <div class="cart-product">
-              <img [src]="'/assets/images/' + item.image" [alt]="item.name" />
+              <img [src]="'assets/images/' + item.image" [alt]="item.name" />
               <div>
                 <h2>{{ item.name }}</h2>
                 <p><strong>Sold By:</strong> {{ item.seller }}</p>
@@ -249,7 +249,7 @@
 
           <div *ngIf="cartItems().length === 0" class="empty-cart">
             <h2>Your cart is empty</h2>
-            <a href="/?page=shop">Return To Shopping</a>
+            <a href="?page=shop">Return To Shopping</a>
           </div>
         </section>
 
@@ -282,8 +282,8 @@
             <span>Total (USD)</span>
             <strong>${{ formatPrice(cartTotal()) }}</strong>
           </div>
-          <a class="checkout-button" href="/?page=checkout">Process To Checkout</a>
-          <a class="return-button" href="/?page=shop">← Return To Shopping</a>
+          <a class="checkout-button" href="?page=checkout">Process To Checkout</a>
+          <a class="return-button" href="?page=shop">← Return To Shopping</a>
         </aside>
       </div>
     </section>

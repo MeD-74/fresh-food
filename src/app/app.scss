@@ -10,7 +10,7 @@
 }
 
 .site-shell {
-  background: #fff url('/assets/images/bg-body.png') top center / 100% auto repeat-y;
+  background: #fff url('assets/images/bg-body.png') top center / 100% auto repeat-y;
   color: #222;
   padding: calc(30px + 20 * (100vw - 320px) / 1600) 0 16px;
 }
@@ -736,7 +736,7 @@
 .category-tile::before {
   background:
     linear-gradient(rgb(13 164 135 / 72%), rgb(13 164 135 / 72%)),
-    url('/assets/images/hero-banner/5.jpg') center / cover;
+    url('assets/images/hero-banner/5.jpg') center / cover;
   content: '';
   filter: blur(3px);
   inset: -6px;
@@ -856,7 +856,7 @@
 
 .cashback-banner {
   align-items: center;
-  background-image: url('/assets/images/New folder/15.jpg');
+  background-image: url('assets/images/New folder/15.jpg');
   background-position: center;
   background-size: cover;
   color: #fff;

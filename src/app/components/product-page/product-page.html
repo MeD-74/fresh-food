@@ -10,7 +10,7 @@
   <section class="product-container product-detail">
     <div class="gallery-column">
       <div class="main-product-image">
-        <img [src]="'/assets/images/' + selectedImage()" alt="Creamy Chocolate Cake" />
+        <img [src]="'assets/images/' + selectedImage()" alt="Creamy Chocolate Cake" />
       </div>
       <div class="thumb-row" aria-label="Product images">
         <button
@@ -19,7 +19,7 @@
           [class.active]="selectedImage() === image"
           (click)="selectImage(image)"
         >
-          <img [src]="'/assets/images/' + image" alt="" />
+          <img [src]="'assets/images/' + image" alt="" />
         </button>
       </div>
     </div>
@@ -100,14 +100,14 @@
 
       <div class="checkout-safe">
         <h3>Guaranteed Safe Checkout</h3>
-        <img src="/assets/images/New folder (4)/1.png" alt="Payment methods" />
+        <img src="assets/images/New folder (4)/1.png" alt="Payment methods" />
       </div>
     </div>
 
     <aside class="seller-panel">
       <section class="seller-card">
         <div class="seller-brand">
-          <img src="/assets/images/products/5.png" alt="Noodles Co." />
+          <img src="assets/images/products/5.png" alt="Noodles Co." />
           <div>
             <h3>Noodles Co.</h3>
             <p>&#9733;&#9733;&#9733;&#9733;&#9734; <span>(36 Reviews)</span></p>
@@ -143,7 +143,7 @@
       <div class="bundle-products">
         <ng-container *ngFor="let item of boughtTogether; let last = last">
           <article class="bundle-card">
-            <img [src]="'/assets/images/' + item.image" [alt]="item.name" />
+            <img [src]="'assets/images/' + item.image" [alt]="item.name" />
             <h3>{{ item.name }}</h3>
             <div><strong>${{ item.price }}</strong> <del>${{ item.oldPrice }}</del></div>
           </article>
@@ -184,7 +184,7 @@
           sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus.
         </p>
         <div class="vegetable-banner">
-          <img src="/assets/images/New folder/14.jpg" alt="Summer vegetable sale" />
+          <img src="assets/images/New folder/14.jpg" alt="Summer vegetable sale" />
           <div>
             <span>SUMMER</span>
             <h2>VEGETABLE</h2>
@@ -276,7 +276,7 @@
       
       <div class="modal-body">
         <div class="product-mini-preview">
-          <img src="/assets/images/New folder (5)/1.jpg" alt="Solid Collared Tshirts" />
+          <img src="assets/images/New folder (5)/1.jpg" alt="Solid Collared Tshirts" />
           <div class="mini-info">
             <h4>Solid Collared Tshirts</h4>
             <span>$16.00</span>

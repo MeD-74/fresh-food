@@ -37,7 +37,7 @@
           <span class="side-line"></span>
           <ul>
             <li *ngFor="let category of sideCategories">
-              <img [src]="'/assets/images/' + category.icon" [alt]="category.name" />
+              <img [src]="'assets/images/' + category.icon" [alt]="category.name" />
               <span>{{ category.name }}</span>
             </li>
           </ul>
@@ -49,7 +49,7 @@
         </section>
 
         <section class="side-promo seafood">
-          <img src="/assets/images/New folder/8.jpg" alt="Seafood fresh products" />
+          <img src="assets/images/New folder/8.jpg" alt="Seafood fresh products" />
           <div>
             <span>Seafood</span>
             <h3><strong>FRESHES</strong> PRODUCTS</h3>
@@ -59,7 +59,7 @@
         </section>
 
         <section class="side-promo vegetables">
-          <img src="/assets/images/New folder/11.jpg" alt="Fresh vegetables" />
+          <img src="assets/images/New folder/11.jpg" alt="Fresh vegetables" />
           <div>
             <h3><strong>FRESH</strong> VEGETABLES</h3>
             <p>Super Offer to 50% Off</p>
@@ -71,7 +71,7 @@
           <h2>Trending Products</h2>
           <span class="side-line"></span>
           <article *ngFor="let product of sidebarDeals">
-            <img [src]="'/assets/images/' + product.img" [alt]="product.name" />
+            <img [src]="'assets/images/' + product.img" [alt]="product.name" />
             <div>
               <h3>{{ product.name }}</h3>
               <span>{{ product.qty }}</span>
@@ -90,7 +90,7 @@
             content.
           </p>
           <div class="customer">
-            <img src="/assets/images/New folder (2)/1.jpg" alt="Tina Mcdonnale" />
+            <img src="assets/images/New folder (2)/1.jpg" alt="Tina Mcdonnale" />
             <div>
               <strong>Tina Mcdonnale</strong>
               <span>Sale Manager</span>
@@ -118,7 +118,7 @@
             <article *ngFor="let product of products" class="product-card">
               <span *ngIf="product.tag" class="product-tag">{{ product.tag }}</span>
               <div class="product-image">
-                <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+                <img [src]="'assets/images/' + product.image" [alt]="product.name" />
                 <ul class="product-option" aria-label="Product actions">
                   <li><button data-tip="View" title="View">&#128065;</button></li>
                   <li><button data-tip="Compare" title="Compare">&#8635;</button></li>
@@ -150,7 +150,7 @@
 
           <div class="category-row desktop-categories">
             <button *ngFor="let category of categories" class="category-tile">
-              <img [src]="'/assets/images/' + category.icon" [alt]="category.name" />
+              <img [src]="'assets/images/' + category.icon" [alt]="category.name" />
               <span>{{ category.name }}</span>
             </button>
           </div>
@@ -164,7 +164,7 @@
             >
               <swiper-slide *ngFor="let category of categories">
                 <button class="category-tile" style="width: 100%; margin-bottom: 0">
-                  <img [src]="'/assets/images/' + category.icon" [alt]="category.name" />
+                  <img [src]="'assets/images/' + category.icon" [alt]="category.name" />
                   <span>{{ category.name }}</span>
                 </button>
               </swiper-slide>
@@ -173,7 +173,7 @@
 
           <div class="promo-pair">
             <article *ngFor="let promo of miniPromos" class="mini-promo">
-              <img [src]="'/assets/images/' + promo.image" [alt]="promo.subtitle" />
+              <img [src]="'assets/images/' + promo.image" [alt]="promo.subtitle" />
               <div>
                 <h3>{{ promo.title }}</h3>
                 <p>{{ promo.subtitle }}</p>
@@ -195,7 +195,7 @@
           <div class="product-grid one-row">
             <article *ngFor="let product of cupboardProducts" class="product-card">
               <div class="product-image">
-                <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+                <img [src]="'assets/images/' + product.image" [alt]="product.name" />
                 <ul class="product-option" aria-label="Product actions">
                   <li><button data-tip="View" title="View">&#128065;</button></li>
                   <li><button data-tip="Compare" title="Compare">&#8635;</button></li>
@@ -226,7 +226,7 @@
         <section class="section-block">
           <div class="wide-promo-grid">
             <article class="wide-promo large">
-              <img src="/assets/images/New folder/12.jpg" alt="Ready to take on the day" />
+              <img src="assets/images/New folder/12.jpg" alt="Ready to take on the day" />
               <div>
                 <p>Get Ready To</p>
                 <h2>TAKE ON THE DAY!</h2>
@@ -238,7 +238,7 @@
               </div>
             </article>
             <article class="wide-promo small">
-              <img src="/assets/images/New folder/13.jpg" alt="Summer product sale" />
+              <img src="assets/images/New folder/13.jpg" alt="Summer product sale" />
               <div>
                 <p>20% Off</p>
                 <h2>SUMMRY Product</h2>
@@ -259,7 +259,7 @@
           <div class="seller-grid">
             <div *ngFor="let group of bestSellerProducts" class="seller-column">
               <article *ngFor="let product of group" class="seller-item">
-                <img [src]="'/assets/images/' + product.img" [alt]="product.name" />
+                <img [src]="'assets/images/' + product.img" [alt]="product.name" />
                 <div>
                   <h3>{{ product.name }}</h3>
                   <span>{{ product.qty }}</span>
@@ -272,7 +272,7 @@
 
         <section class="section-block">
           <div class="vegetable-banner">
-            <img src="/assets/images/New folder/14.jpg" alt="Summer vegetable sale" />
+            <img src="assets/images/New folder/14.jpg" alt="Summer vegetable sale" />
             <div>
               <span>SUMMER</span>
               <h2>VEGETABLE</h2>
@@ -294,11 +294,11 @@
           <div class="blog-grid desktop-blog">
             <article *ngFor="let post of blogPosts" class="blog-card">
               <a
-                href="/?page=blog-detail"
+                href="?page=blog-detail"
                 style="text-decoration: none; color: inherit; display: block"
               >
                 <div class="blog-image">
-                  <img [src]="'/assets/images/' + post.img" [alt]="post.title" />
+                  <img [src]="'assets/images/' + post.img" [alt]="post.title" />
                 </div>
                 <span>{{ post.date }}</span>
                 <h3>{{ post.title }}</h3>
@@ -318,12 +318,12 @@
               <swiper-slide *ngFor="let post of blogPosts">
                 <article class="blog-card" style="margin-bottom: 30px">
                   <a
-                    href="/?page=blog-detail"
+                    href="?page=blog-detail"
                     style="text-decoration: none; color: inherit; display: block"
                   >
                     <div class="blog-image" style="height: 250px">
                       <img
-                        [src]="'/assets/images/' + post.img"
+                        [src]="'assets/images/' + post.img"
                         [alt]="post.title"
                         class="w-full h-full object-cover"
                       />

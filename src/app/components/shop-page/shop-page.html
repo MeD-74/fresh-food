@@ -11,7 +11,7 @@
   <section class="shop-container shop-content">
     <div class="shop-category-strip" *ngIf="viewMode() !== 'list'">
       <button *ngFor="let category of categories" class="shop-category-card">
-        <img [src]="'/assets/images/' + category.icon" [alt]="category.name" />
+        <img [src]="'assets/images/' + category.icon" [alt]="category.name" />
         <span>{{ category.name }}</span>
       </button>
     </div>
@@ -132,7 +132,7 @@
 
       <div class="shop-products">
         <div *ngIf="viewMode() === 'list'" class="shop-list-banner">
-          <img src="/assets/images/featured-blog/1.jpg" alt="Healthy fruits and vegetables" />
+          <img src="assets/images/featured-blog/1.jpg" alt="Healthy fruits and vegetables" />
           <div>
             <h2>Healthy, Nutritious & Tasty Fruits & Veggies</h2>
             <p>Save upto 50%</p>
@@ -181,7 +181,7 @@
         >
           <article *ngFor="let product of productList" class="shop-product-card">
             <div class="shop-product-image">
-              <img [src]="'/assets/images/' + product.image" [alt]="product.name" />
+              <img [src]="'assets/images/' + product.image" [alt]="product.name" />
               <ul class="shop-product-option" aria-label="Product actions">
                 <li>
                   <button
@@ -252,7 +252,7 @@
     </button>
 
     <div class="quick-view-image">
-      <img src="/assets/images/New folder (5)/1.jpg" [alt]="product.name" />
+      <img src="assets/images/New folder (5)/1.jpg" [alt]="product.name" />
     </div>
 
     <div class="quick-view-content">
