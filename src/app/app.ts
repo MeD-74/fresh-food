@@ -29,7 +29,6 @@ import { FaqPage } from './components/faq-page/faq-page';
     ShopPage,
     ProductPage,
     BlogPage,
-    BlogSection,
     CartPage,
     AboutUs,
     ContactPage,
